@@ -41,7 +41,7 @@ struct ShowMultipleTypes<Type, Types...> {
 
 } // namespace detail
 
-template <typename T>
+template <typename T, typename=void>
 struct ShowType {
   static void showType(std::ostream &os) {
     os << detail::demangle(typeid(T).name());
